@@ -12,6 +12,7 @@ export async function POST(req: Request) {
 
     const reply = await generateTextFromGemini(prompt, { temperature: 0.8, maxOutputTokens: 400 });
 
+    
     return NextResponse.json({ success: true, reply }, { status: 200 });
   } catch (err) {
     console.error("Gemini API error:", err);
