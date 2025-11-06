@@ -1,11 +1,19 @@
- import React from 'react'
  
- const page = () => {
-   return (
-     <div>
-       sign-in page 
-     </div>
-   )
- }
+
+import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';  
+
  
- export default page
+const SignInForm = dynamic(() => import('@/components/sign-in'), {
+  ssr: false,
+});
+
+export const metadata: Metadata = {
+ 
+  title: 'Sign In - True Feedback',
+};
+
+
+export default function SignInPage() {
+   return <SignInForm />;
+}

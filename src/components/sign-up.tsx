@@ -30,7 +30,7 @@ export default function SignUpForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // IMPORTANT: useDebounce from 'use-debounce' returns a tuple [value, cancel]
-  const [debouncedUsername] = useDebounce(username, 300);
+  const [debouncedUsername] = useDebounce(username, 600);
 
   // mounted guard to prevent SSR/CSR mismatch (hydration errors)
   const [mounted, setMounted] = useState(false);
